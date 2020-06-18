@@ -1,10 +1,15 @@
-# webapp
+# Dashboard Web Application
 
-a [Sails v1](https://sailsjs.com) application
+On 06/18/2020 [Sails v1](https://sailsjs.com) married [SB Admin 2](https://startbootstrap.com/themes/sb-admin-2/) and magic happened.
 
+This project was built to be a huge jump start for creating client facing dashboard web applications in Node JS.
+This template has everything from frontend libraries for icons, styles, charts, and datatables to backend systems for user authentication, email notifications, billing, password recovery, database integration, access policies and more.
+
+Sails JS is a powerful framework for building production ready applications and the SB Admin 2 dashboard theme is a beautiful bootstrap 4 design that gives you everything you need to build the dashboard you need.
 
 ### Links
 
++ [SB Admin 2 Dashboard Theme](https://startbootstrap.com/themes/sb-admin-2/)
 + [Sails framework documentation](https://sailsjs.com/get-started)
 + [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
 + [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
