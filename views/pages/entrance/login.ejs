@@ -1,0 +1,72 @@
+<div class="container" id="login" v-cloak>
+
+  <!-- Outer Row -->
+  <div class="row justify-content-center">
+
+    <div class="col-xl-10 col-lg-12 col-md-9">
+
+      <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+          <!-- Nested Row within Card Body -->
+          <div class="row">
+            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+            <div class="col-lg-6">
+              <div class="p-5">
+                <div class="text-center">
+                  <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                </div>
+                <ajax-form action="login" :syncing.sync="syncing" :cloud-error.sync="cloudError" :form-data="formData"
+                  :form-rules="formRules" :form-errors.sync="formErrors" @submitted="submittedForm()" class="user">
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-user" aria-describedby="emailHelp"
+                      placeholder="Email address" :class="[formErrors.emailAddress ? 'is-invalid' : '']"
+                      v-model.trim="formData.emailAddress" autocomplete="email" focus-first>
+                    <div class="invalid-feedback" v-if="formErrors.emailAddress">Please provide a valid email address.
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-user" placeholder="Password"
+                      :class="[formErrors.password ? 'is-invalid' : '']" v-model.trim="formData.password"
+                      autocomplete="current-password">
+                    <div class="invalid-feedback" v-if="formErrors.password">Please enter your password.</div>
+                  </div>
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox small">
+                      <input type="checkbox" class="custom-control-input" id="remember" name="rememberMe"
+                        v-model="formData.rememberMe">
+                      <label class="custom-control-label" for="remember">Remember Me</label>
+                    </div>
+                  </div>
+                  <p class="text-danger" v-if="cloudError==='badCombo'"><small>The credentials you entered are not
+                      associated with an account. Please check your email and/or password and try again.</small></p>
+                  <p class="text-danger" v-else-if="cloudError"><small>An error occured while processing your request.
+                      Please check your information and try again, or <a href="/contact">contact support</a> if the
+                      error persists.</small></p>
+                  <ajax-button :syncing="syncing" class="btn btn-primary btn-user btn-block">Login</ajax-button>
+                  <!-- <hr> <a href="index.html" class="btn btn-google btn-user btn-block">
+                    <i class="fab fa-google fa-fw"></i> Login with Google
+                  </a>
+                  <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                    <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                  </a> -->
+                </ajax-form>
+                <hr>
+                <div class="text-center">
+                  <a class="small" href="/password/forgot">Forgot Password?</a>
+                </div>
+                <div class="text-center">
+                  <a class="small" href="/signup">Create an Account!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+<script> document.body.classList.add('bg-gradient-primary'); </script>
